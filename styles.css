@@ -1,0 +1,6 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: "roboto", verdana, sans-serif;
+    overflow-y: scroll;
+}
