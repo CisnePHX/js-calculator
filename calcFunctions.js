@@ -10,20 +10,19 @@ function multiply(num1, num2){
     return num1 * num2;
 }
 function divide(num1, num2){
+    // Error message for dividing by zero
     let answer = num1 / num2;
     return answer;
 }
+// Take in and store the pushed button values
+// Create an object  with 2 nums, 1 operator, defaults of zero and Null and populate from onclick eventlistener
+// Populate the display with clicked value in eventlistener
 
 // Create function operate() that takes an operator and 2 numbers and then calls one of the action functions
-// Error message for dividing by zero
+// Calculate when the equals button is pushed
 // Need a response for pressing = without enough values
 // "Clear" should wipe out existing data
 
-// Take in a store the pushed botton values
-
-// Calculate when the equals button is pushed
-
-// Populate the display when each button is clicked and store the display value
 
 // Update the display with the calcuation's solution 
 
