@@ -18,10 +18,10 @@ function divide(num1, num2){
     return answer;
 }
 // Populate the display with clicked value in eventlistener
-function storeAndDisplayNums(){
+//function storeAndDisplayNums(){
    // numInputs.push(item.value);
-    document.getElementById("display").innerHTML = "TEST";
-}
+    
+//}
 //function storeAndDisplayOps(){
 
 //}
@@ -29,7 +29,9 @@ function storeAndDisplayNums(){
 // Add an eventlistener to each number button, and then to each operator button
 let numButtons = document.querySelectorAll(".sqBtn");
 console.table(numButtons);
-numButtons.forEach(item => {item.addEventListener('click', storeAndDisplayNums)});
+numButtons.forEach(item => {item.addEventListener('click', function(){
+    document.getElementById("display").innerHTML = item.value;
+})});
 let operators = document.querySelectorAll(".actionBtn");
 
 // Create function operate() that takes an operator and 2 numbers and then calls one of the action functions
