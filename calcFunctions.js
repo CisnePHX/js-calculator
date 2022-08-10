@@ -1,6 +1,18 @@
 // Create a calculator with buttons that can add, subtract, multiply and divide a pair of numbers at a time
 // Create a function for each math action (round answers with long decimal values)
-
+function add(num1, num2){
+    return num1 + num2;
+}
+function subtract(num1, num2){
+    return num1 - num2;
+}
+function multiply(num1, num2){
+    return num1 * num2;
+}
+function divide(num1, num2){
+    let answer = num1 / num2;
+    return answer;
+}
 
 // Create function operate() that takes an operator and 2 numbers and then calls one of the action functions
 // Error message for dividing by zero
