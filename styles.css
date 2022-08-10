@@ -60,10 +60,11 @@ h1{
 #clear{
     border: black 1px solid;
     height: 30px;
-    width: 60px;
+    width: 180px;
     background-color: blue;
     color: white;
     font-weight: bold;
+    font-size: 30px;
     justify-content: center;
     align-items: center;
     margin: 20px;
