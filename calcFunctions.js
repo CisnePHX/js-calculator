@@ -28,11 +28,17 @@ function divide(num1, num2){
 // Take in and store the pushed button values
 // Add an eventlistener to each number button, and then to each operator button
 let numButtons = document.querySelectorAll(".sqBtn");
-console.table(numButtons);
+
 numButtons.forEach(item => {item.addEventListener('click', function(){
+    numInputs.push(item.value);
     document.getElementById("display").innerHTML = item.value;
 })});
 let operators = document.querySelectorAll(".actionBtn");
+
+operators.forEach(item => {item.addEventListener('click', function(){
+    opInputs.push(item.value);
+    document.getElementById("display").innerHTML = item.value;
+})});
 
 // Create function operate() that takes an operator and 2 numbers and then calls one of the action functions
 // Calculate when the equals button is pushed
