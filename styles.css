@@ -7,7 +7,37 @@ body {
 #calculator{
     display: flex;
     flex-direction: column;
-    background-color: azure;
+    background-color: grey;
     border: black 5px solid;
     border-radius: 5px;
+    height: 300px;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+}
+#display{
+    border: black 2px solid;
+    background-color: white;
+    height: 30px;
+    width: 150px;
+}
+#calcCore{
+    display: flex;
+    flex-direction: row;
+}
+#numbers{
+    display: flex;
+    flex-direction: column;
+}
+#sevenToNine{
+    display: flex;
+    flex-direction: row;
+}
+#fourToSix{
+    display: flex;
+    flex-direction: row;
+}
+#oneToThree{
+    display: flex;
+    flex-direction: row;
 }
