@@ -19,15 +19,17 @@ function divide(num1, num2){
 }
 // Populate the display with clicked value in eventlistener
 function storeAndDisplayNums(){
-    numInputs.push(item.value);
-    document.getElementById("display").innerHTML = item.value;
+   // numInputs.push(item.value);
+    document.getElementById("display").innerHTML = "TEST";
 }
-function storeAndDisplayOps(){
+//function storeAndDisplayOps(){
 
-}
+//}
 // Take in and store the pushed button values
 // Add an eventlistener to each number button, and then to each operator button
-document.querySelectorAll(".sqBtn").forEach(item => {item.addEventListener('click', storeAndDisplay)});
+let numButtons = document.querySelectorAll(".sqBtn");
+console.table(numButtons);
+numButtons.forEach(item => {item.addEventListener('click', storeAndDisplayNums)});
 let operators = document.querySelectorAll(".actionBtn");
 
 // Create function operate() that takes an operator and 2 numbers and then calls one of the action functions

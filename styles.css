@@ -21,8 +21,14 @@ h1{
     align-items: center;
 }
 #display{
+    display: flex;
+    justify-content:right;
+    align-items: center;
     border: black 2px solid;
     background-color: white;
+    font-size: 30px;
+    font-family: roboto, monospace;
+    padding: 10px;
     height: 100px;
     width: 400px;
 }
