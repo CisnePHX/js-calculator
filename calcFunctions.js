@@ -1,4 +1,7 @@
 // Create a calculator with buttons that can add, subtract, multiply and divide a pair of numbers at a time
+// Create an array for numbers, and for operators to populate from onclick eventlistener
+const numInputs = [];
+const opInputs = [];
 // Create a function for each math action (round answers with long decimal values)
 function add(num1, num2){
     return num1 + num2;
@@ -14,9 +17,18 @@ function divide(num1, num2){
     let answer = num1 / num2;
     return answer;
 }
-// Take in and store the pushed button values
-// Create an object  with 2 nums, 1 operator, defaults of zero and Null and populate from onclick eventlistener
 // Populate the display with clicked value in eventlistener
+function storeAndDisplayNums(){
+    numInputs.push(item.value);
+    document.getElementById("display").innerHTML = item.value;
+}
+function storeAndDisplayOps(){
+
+}
+// Take in and store the pushed button values
+// Add an eventlistener to each number button, and then to each operator button
+document.querySelectorAll(".sqBtn").forEach(item => {item.addEventListener('click', storeAndDisplay)});
+let operators = document.querySelectorAll(".actionBtn");
 
 // Create function operate() that takes an operator and 2 numbers and then calls one of the action functions
 // Calculate when the equals button is pushed
