@@ -15,20 +15,21 @@ h1{
     background-color: grey;
     border: black 5px solid;
     border-radius: 5px;
-    height: 500px;
-    width: 300px;
+    height: 700px;
+    width: 500px;
     justify-content: center;
     align-items: center;
 }
 #display{
     border: black 2px solid;
     background-color: white;
-    height: 30px;
-    width: 150px;
+    height: 100px;
+    width: 400px;
 }
 #calcCore{
     display: flex;
     flex-direction: row;
+    margin-top: 20px;
 }
 #numbers{
     display: flex;
@@ -52,9 +53,11 @@ h1{
     width: 60px;
     background-color: blue;
     color: white;
-    font-weight: 300;
+    font-weight: bold;
     justify-content: center;
     align-items: center;
+    margin: 20px;
+    padding: 20px;
 }
 #calcActions{
     display:flex;
@@ -73,6 +76,10 @@ h1{
     margin: 8px;
     padding: 10px;
     font-size: large;
-    height: 20px;
-    width: 20px;;
+    height: 50px;
+    width: 50px;;
+}
+#equals{
+    background-color: white;
+    font-weight: bold;
 }
