@@ -41,3 +41,21 @@ body {
     display: flex;
     flex-direction: row;
 }
+#clear{
+    border: black 1px solid;
+}
+#calcActions{
+    display:flex;
+    flex-direction: column;
+}
+#pmRow{
+    display: flex;
+    flex-direction: row;
+}
+#mdRow{
+    display: flex;
+    flex-direction: row;
+}
+.sqBtn{
+    border: black 1px solid;
+}
