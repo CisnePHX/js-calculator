@@ -39,6 +39,22 @@ operators.forEach(item => {item.addEventListener('click', function(){
     opInputs.push(item.value);
     document.getElementById("display").innerHTML = item.value;
 })});
+let equalBtn = document.getElementById("equals");
+
+equals.addEventListener('click', function(){
+    let num2 = numInputs.pop();
+    let num1 = numInputs.pop();
+    let operator = opInputs.pop();
+    if (operator == "+"){
+        add(num1, num2);
+    }else if (operator == "-"){
+        subtract(num1, num2);
+    }else if (operator == "x"){
+        multiply(num1, num2);
+    }else {
+        divide(num1, num2);
+    }
+});
 
 // Create function operate() that takes an operator and 2 numbers and then calls one of the action functions
 // Calculate when the equals button is pushed
