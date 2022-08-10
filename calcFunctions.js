@@ -4,17 +4,25 @@ const numInputs = [];
 const opInputs = [];
 // Create a function for each math action (round answers with long decimal values)
 function add(num1, num2){
-    return num1 + num2;
+    let number1 = parseInt(num1);
+    let number2 = parseInt(num2);
+    return number1 + number2;
 }
 function subtract(num1, num2){
-    return num1 - num2;
+    let number1 = parseInt(num1);
+    let number2 = parseInt(num2);
+    return number1 - number2;
 }
 function multiply(num1, num2){
-    return num1 * num2;
+    let number1 = parseInt(num1);
+    let number2 = parseInt(num2);
+    return number1 * number2;
 }
 function divide(num1, num2){
+    let number1 = parseInt(num1);
+    let number2 = parseInt(num2);
     // Error message for dividing by zero
-    let answer = num1 / num2;
+    let answer = number1 / number2;
     return answer;
 }
 // Populate the display with clicked value in eventlistener
@@ -46,13 +54,13 @@ equals.addEventListener('click', function(){
     let num1 = numInputs.pop();
     let operator = opInputs.pop();
     if (operator == "+"){
-        add(num1, num2);
+        document.getElementById("display").innerHTML = add(num1, num2);
     }else if (operator == "-"){
-        subtract(num1, num2);
+        document.getElementById("display").innerHTML = subtract(num1, num2);
     }else if (operator == "x"){
-        multiply(num1, num2);
+        document.getElementById("display").innerHTML = multiply(num1, num2);
     }else {
-        divide(num1, num2);
+        document.getElementById("display").innerHTML = divide(num1, num2);
     }
 });
 

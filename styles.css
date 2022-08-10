@@ -117,10 +117,12 @@ h1{
 }
 #equals{
     display: flex;
-    background-color: white;
-    font-weight: bolder;
-    height: 50px;
-    width: 100px;
     justify-content: center;
     align-items: center;
+    background-color: white;
+    border: black 1px solid;
+    font-weight: bolder;
+    font-size: 25px;
+    height: 50px;
+    width: 100px;
 }
