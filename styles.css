@@ -4,3 +4,10 @@ body {
     font-family: "roboto", verdana, sans-serif;
     overflow-y: scroll;
 }
+#calculator{
+    display: flex;
+    flex-direction: column;
+    background-color: azure;
+    border: black 5px solid;
+    border-radius: 5px;
+}
