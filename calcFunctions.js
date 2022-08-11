@@ -6,6 +6,7 @@ let opInputs = [];
 let displayBox = document.getElementById("display");
 
 // Functions for each math action (round answers with long decimal values)
+//******************Add results to number array so that numbers can be continuously added
 function add(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
@@ -25,10 +26,11 @@ function divide(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
     let answer = 0;
-    // ********Response for dividing by zero
+    // Response for dividing by zero
     if(number2 === 0){
         return answer = 0;
     }else {
+        //***** Need to round answers with long decimal values so no screen overflow
         answer = number1 / number2;
         return answer;
     }
