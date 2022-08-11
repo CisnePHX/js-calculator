@@ -1,5 +1,6 @@
-// Create a calculator with buttons that can add, subtract, multiply and divide a pair of numbers at a time
-// Create an array for numbers, and for operators to populate from onclick eventlistener
+// This program reate s calculator with buttons that can add, subtract, multiply and divide a pair of numbers at a time
+
+// Creates an array for numbers, and for operators to populate from onclick eventlistener
 let numInputs = [];
 let opInputs = [];
 let displayBox = document.getElementById("display");
@@ -23,9 +24,14 @@ function multiply(num1, num2){
 function divide(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
-    // ********Error message for dividing by zero
-    let answer = number1 / number2;
-    return answer;
+    let answer = 0;
+    // ********Response for dividing by zero
+    if(number2 === 0){
+        return answer = 0;
+    }else {
+        answer = number1 / number2;
+        return answer;
+    }
 }
 
 // Creates a function operate() that takes an operator and 2 numbers and then calls one of the action functions
@@ -78,6 +84,6 @@ clearBtn.addEventListener('click', function(){
 
 
 
-// EXTRA CREDIT: Add a . for decimal value math (but only up to tenths place).
+// EXTRA CREDIT FOR ANOTHER TIME: Add a . for decimal value math (but only up to tenths place).
 // also add a backspace button
 // add keyboard support
