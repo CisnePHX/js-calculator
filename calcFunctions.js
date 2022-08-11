@@ -3,7 +3,8 @@
 let numInputs = [];
 let opInputs = [];
 let displayBox = document.getElementById("display");
-// Create a function for each math action (round answers with long decimal values)
+
+// Functions for each math action (round answers with long decimal values)
 function add(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
@@ -22,20 +23,29 @@ function multiply(num1, num2){
 function divide(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
-    // Error message for dividing by zero
+    // ********Error message for dividing by zero
     let answer = number1 / number2;
     return answer;
 }
-// Populate the display with clicked value in eventlistener
-//function storeAndDisplayNums(){
-   // numInputs.push(item.value);
-    
-//}
-//function storeAndDisplayOps(){
 
-//}
-// Take in and store the pushed button values
-// Add an eventlistener to each number button, and then to each operator button
+// Creates a function operate() that takes an operator and 2 numbers and then calls one of the action functions
+// ******Need a response for pressing = without enough values
+function operate(){
+    let num2 = numInputs.pop();
+    let num1 = numInputs.pop();
+    let operator = opInputs.pop();
+    if (operator == "+"){
+        displayBox.innerHTML = add(num1, num2);
+    }else if (operator == "-"){
+        displayBox.innerHTML = subtract(num1, num2);
+    }else if (operator == "x"){
+        displayBox.innerHTML = multiply(num1, num2);
+    }else {
+        displayBox.innerHTML = divide(num1, num2);
+    }
+}
+
+// Add an eventlistener to take in and store the pushed button values, and then display it
 let numButtons = document.querySelectorAll(".sqBtn");
 
 numButtons.forEach(item => {item.addEventListener('click', function(){
@@ -50,26 +60,10 @@ operators.forEach(item => {item.addEventListener('click', function(){
 })});
 let equalBtn = document.getElementById("equals");
 
-equalBtn.addEventListener('click', function(){
-    let num2 = numInputs.pop();
-    let num1 = numInputs.pop();
-    let operator = opInputs.pop();
-    if (operator == "+"){
-        displayBox.innerHTML = add(num1, num2);
-    }else if (operator == "-"){
-        displayBox.innerHTML = subtract(num1, num2);
-    }else if (operator == "x"){
-        displayBox.innerHTML = multiply(num1, num2);
-    }else {
-        displayBox.innerHTML = divide(num1, num2);
-    }
-});
+// Gets values from arrays to calculate via operate function when = is pressed
+equalBtn.addEventListener('click', operate);
 
-// Create function operate() that takes an operator and 2 numbers and then calls one of the action functions
-// Calculate when the equals button is pushed
-// Need a response for pressing = without enough values
-
-// "Clear" should wipe out existing data
+// "Clear" wipes out existing data
 let clearBtn = document.getElementById("clear");
 
 clearBtn.addEventListener('click', function(){
@@ -77,7 +71,6 @@ clearBtn.addEventListener('click', function(){
     opInputs = [];
     displayBox.innerHTML = "";
 });
-// Update the display with the calcuation's solution 
 
 
 
