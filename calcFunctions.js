@@ -10,17 +10,23 @@ let displayBox = document.getElementById("display");
 function add(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
-    return number1 + number2;
+    let answer = number1 + number2;
+    numInputs.push(answer);
+    return answer;
 }
 function subtract(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
-    return number1 - number2;
+    let answer = number1 - number2;
+    numInputs.push(answer);
+    return answer;
 }
 function multiply(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
-    return number1 * number2;
+    let answer = number1 * number2;
+    numInputs.push(answer);
+    return answer;
 }
 function divide(num1, num2){
     let number1 = parseInt(num1);
@@ -28,10 +34,12 @@ function divide(num1, num2){
     let answer = 0;
     // Response for dividing by zero
     if(number2 === 0){
-        return answer = 0;
+        numInputs.push(answer);
+        return answer;
     }else {
         //***** Need to round answers with long decimal values so no screen overflow
         answer = number1 / number2;
+        numInputs.push(answer);
         return answer;
     }
 }
