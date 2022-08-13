@@ -3,8 +3,8 @@
 // Creates an array for numbers, and for operators to populate from onclick eventlistener
 let numInputs = [];
 let opInputs = [];
-let numOneArrayIndex = -1;
-let numOneArrayEnd = 0;
+let numArrayIndex = -1;
+let numTwoStartIndex = 0;
 let displayBox = document.getElementById("display");
 
 // Functions for each math action (round answers with long decimal values)
@@ -12,33 +12,33 @@ function add(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
     let answer = number1 + number2;
-    numOneArrayIndex = -1; //Empty the memory of digits past
-    numOneArrayEnd = 0;
+    numArrayIndex = -1; //Empty the memory of digits past
+    numTwoStartIndex = 0;
     numInputs = [];
     numInputs.push(answer);
-    numOneArrayIndex++; 
+    numArrayIndex++; 
     return answer;
 }
 function subtract(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
     let answer = number1 - number2;
-    numOneArrayIndex = 1; //Empty the memory of digits past
-    numOneArrayEnd = 0;
+    numArrayIndex = -1; //Empty the memory of digits past
+    numTwoStartIndex = 0;
     numInputs = [];
     numInputs.push(answer);
-    numOneArrayIndex++; 
+    numArrayIndex++; 
     return answer;
 }
 function multiply(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
     let answer = number1 * number2;
-    numOneArrayIndex = -1; //Empty the memory of digits past
-    numOneArrayEnd = 0;
+    numArrayIndex = -1; //Empty the memory of digits past
+    numTwoStartIndex = 0;
     numInputs = [];
     numInputs.push(answer);
-    numOneArrayIndex++; 
+    numArrayIndex++; 
     return answer;
 }
 function divide(num1, num2){
@@ -47,19 +47,19 @@ function divide(num1, num2){
     let answer = 0;
     // Response for dividing by zero
     if(number2 === 0){
-        numOneArrayIndex = -1; //Empty the memory of digits past
-        numOneArrayEnd = 0;
+        numArrayIndex = -1; //Empty the memory of digits past
+        numTwoStartIndex = 0;
         numInputs = [];
         numInputs.push(answer);
-        numOneArrayIndex++; 
+        numArrayIndex++; 
         return answer;
     }else {
         answer = number1 / number2;
-        numOneArrayIndex = -1; //Empty the memory of digits past
-        numOneArrayEnd = 0;
+        numArrayIndex = -1; //Empty the memory of digits past
+        numTwoStartIndex = 0;
         numInputs = [];
         numInputs.push(answer);
-        numOneArrayIndex++; 
+        numArrayIndex++; 
         return answer;
     }
 }
@@ -69,18 +69,18 @@ function divide(num1, num2){
 function operate(){
     let num2 = '';
     let num1 = '';
-    if(numOneArrayIndex === 0){
+    if(numArrayIndex === 0){
         displayBox.innerHTML = numInputs[0];
-    }else if(numOneArrayIndex === -1){
+    }else if(numArrayIndex === -1){
         displayBox.innerHTML = 0;
     }else {
-        for(let i = numOneArrayEnd; i <= numOneArrayIndex; i++){
+        for(let i = numTwoStartIndex; i <= numArrayIndex; i++){
             num2 += '' + numInputs[i];
 
         console.log(`number2 is ${num2}`);
 
         }
-        for(let h = 0; h < numOneArrayEnd; h++){
+        for(let h = 0; h < numTwoStartIndex; h++){
             num1 += '' + numInputs[h];
             console.log(`number1 is ${num1}`);
         }
@@ -99,21 +99,21 @@ function operate(){
 
 // Add an eventlistener to take in and store the pushed button values, and then display it
 // NumOneArray tells the # of digits input into the number array
-// NumOneArrayEnd tells the number of digits prior to the second set of digits
+// numTwoStartIndex tells the number of digits prior to the second set of digits
 let numButtons = document.querySelectorAll(".sqBtn");
 
 numButtons.forEach(item => {item.addEventListener('click', function(){
     numInputs.push(item.value);
-    numOneArrayIndex++; //This value will be the same as the array index number called for an operation
-    console.log(`Number array index: ${numOneArrayIndex}`);
+    numArrayIndex++; //This value will be the same as the array index number called for an operation
+    console.log(`Number array index: ${numArrayIndex}`);
     displayBox.innerHTML += item.value;
 })});
 let operators = document.querySelectorAll(".actionBtn");
 
 operators.forEach(item => {item.addEventListener('click', function(){
     opInputs.push(item.value);
-    numOneArrayEnd = numOneArrayIndex +1;
-    console.log(`Second number index starts at: ${numOneArrayEnd}`);
+    numTwoStartIndex = numArrayIndex +1;
+    console.log(`Second number index starts at: ${numTwoStartIndex}`);
     displayBox.innerHTML = item.value;
 })});
 let equalBtn = document.getElementById("equals");
@@ -127,8 +127,8 @@ let clearBtn = document.getElementById("clear");
 clearBtn.addEventListener('click', function(){
     numInputs = [];
     opInputs = [];
-    numOneArrayIndex = -1;
-    numOneArrayEnd = 0;
+    numArrayIndex = -1;
+    numTwoStartIndex = 0;
     displayBox.innerHTML = "";
 });
 
