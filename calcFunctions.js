@@ -12,7 +12,7 @@ function add(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
     let answer = number1 + number2;
-    numOneArrayIndex = 0; //Empty the memory of digits past
+    numOneArrayIndex = -1; //Empty the memory of digits past
     numOneArrayEnd = 0;
     numInputs = [];
     numInputs.push(answer);
@@ -22,7 +22,7 @@ function subtract(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
     let answer = number1 - number2;
-    numOneArrayIndex = 0; //Empty the memory of digits past
+    numOneArrayIndex = 1; //Empty the memory of digits past
     numOneArrayEnd = 0;
     numInputs = [];
     numInputs.push(answer);
@@ -32,7 +32,7 @@ function multiply(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
     let answer = number1 * number2;
-    numOneArrayIndex = 0; //Empty the memory of digits past
+    numOneArrayIndex = -1; //Empty the memory of digits past
     numOneArrayEnd = 0;
     numInputs = [];
     numInputs.push(answer);
@@ -44,14 +44,14 @@ function divide(num1, num2){
     let answer = 0;
     // Response for dividing by zero
     if(number2 === 0){
-        numOneArrayIndex = 0; //Empty the memory of digits past
+        numOneArrayIndex = -1; //Empty the memory of digits past
         numOneArrayEnd = 0;
         numInputs = [];
         numInputs.push(answer);
         return answer;
     }else {
         answer = number1 / number2;
-        numOneArrayIndex = 0; //Empty the memory of digits past
+        numOneArrayIndex = -1; //Empty the memory of digits past
         numOneArrayEnd = 0;
         numInputs = [];
         numInputs.push(answer);
@@ -118,7 +118,7 @@ let clearBtn = document.getElementById("clear");
 clearBtn.addEventListener('click', function(){
     numInputs = [];
     opInputs = [];
-    numOneArrayIndex = 0;
+    numOneArrayIndex = -1;
     numOneArrayEnd = 0;
     displayBox.innerHTML = "";
 });
