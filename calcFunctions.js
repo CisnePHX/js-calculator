@@ -100,7 +100,7 @@ function operate(){
 // Add an eventlistener to take in and store the pushed button values, and then display it
 // NumOneArray tells the # of digits input into the number array
 // numTwoStartIndex tells the number of digits prior to the second set of digits
-let numButtons = document.querySelectorAll(".sqBtn");
+let numButtons = document.querySelectorAll(".numBtn");
 
 numButtons.forEach(item => {item.addEventListener('click', function(){
     numInputs.push(item.value);
