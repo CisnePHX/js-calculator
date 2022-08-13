@@ -1,13 +1,13 @@
-// This program reate s calculator with buttons that can add, subtract, multiply and divide a pair of numbers at a time
+// This program creates calculator with buttons that can add, subtract, multiply, and divide a pair of numbers at a time
 
-// Creates an array for numbers, and for operators to populate from onclick eventlistener
+// Creates an array for numbers and for operators - to populate from onclick eventlistener
 let numInputs = [];
 let opInputs = [];
-let numArrayIndex = -1;
-let numTwoStartIndex = 0;
-let displayBox = document.getElementById("display");
+let numArrayIndex = -1; //reference value to keep track of length of array
+let numTwoStartIndex = 0; //reference value to keep track of array index of second number
+let displayBox = document.getElementById("display"); //for use anytime a value needs to be pushed to the calculator display
 
-// Functions for each math action (round answers with long decimal values)
+// Functions for each math action 
 function add(num1, num2){
     let number1 = parseInt(num1);
     let number2 = parseInt(num2);
@@ -97,9 +97,9 @@ function operate(){
     }
 }
 
-// Add an eventlistener to take in and store the pushed button values, and then display it
-// NumOneArray tells the # of digits input into the number array
-// numTwoStartIndex tells the number of digits prior to the second set of digits
+// Adds an eventlistener to take in and store the pushed button values, and then display each on button push
+// numArrayIndex tells the # of digits input into the number array
+// numTwoStartIndex tells the array index where the second number starts
 let numButtons = document.querySelectorAll(".numBtn");
 
 numButtons.forEach(item => {item.addEventListener('click', function(){
@@ -108,6 +108,7 @@ numButtons.forEach(item => {item.addEventListener('click', function(){
     console.log(`Number array index: ${numArrayIndex}`);
     displayBox.innerHTML += item.value;
 })});
+// Add an eventlistener to take in and store the pushed operator value, and then display it
 let operators = document.querySelectorAll(".actionBtn");
 
 operators.forEach(item => {item.addEventListener('click', function(){
@@ -121,7 +122,7 @@ let equalBtn = document.getElementById("equals");
 // Gets values from arrays to calculate via operate function when = is pressed
 equalBtn.addEventListener('click', operate);
 
-// "Clear" wipes out existing data
+// "Clear" wipes out existing data and clears the calculator screen
 let clearBtn = document.getElementById("clear");
 
 clearBtn.addEventListener('click', function(){
